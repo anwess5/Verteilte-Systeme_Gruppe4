@@ -6,76 +6,69 @@ Wowerath, Steven
 
 Weßbecher, Aaron
 
+## Beschreibung
+
+Die API soll eine Schnittstelle für lokale angesehene Hotels geutzt werden. Dabei werden alle Informationen darüber gespeichert. 
+Zum einen dieInformatioenen zum Hotel allgemein, den Zimmern und den Mitarbeitern. Mit Hilfe der ganzen Inhalte können Mneschen die Hotels vergleichen
+
 
 ## API Endpoint 1
+URI:
+		/hotel/zimmer
 
-URI: /restaurant/speisen/
-
-Beispiel: /restaurant/speise/?speise_id=1
-
-Parameter: speise_id (int)
-
-Response-Type: application/json
+Beispiel: 	/hotel/zimmer/?zimmer_id=12
+Response-Type: 	application/json
 
 Response:
 
-
-```
+```  
 {
-    "speise_name": "Weinblätter",
+    "zimmer_id": "12",
     
-    "art": "Vorspeise",
+    "Zimmertyp": "Doppelzimmer",
     
-    "Zubereitungsdauer": "15 Miunten",
+    "Zimmergröße": "20 qm",
     
-    "Preis": "5,00"  
+    "Preis/Nacht": "85,00" ,
+
+    "Balkon":  "true" 
 }
-```
+```  
 
+Beispiel: 	/hotel/location/?hotel_id=3900
+Response-Type: 	application/json
 
-## API Endpoint 2
+Response:
 
-URI: /restaurant/location/
-
-Beispiel: /restaurant/location/?location_id=1
-
-Parameter: location_id (int)
-
-Response-Type: application/json
-
-Response
-
-```
+```  
 {
-    "location_stadt": "Karlsruhe",
+    "hotel_id": "3900",
     
-    "größe": "50 Personen",
+    "Name": "Royal Hotel",
     
-    "bewertung": "5 Sterne"   
+    "Stadt": "Karlsruhe",
+    
+    "Anzahl-Zimmer": "45" ,
+    
+    "Restaurant":  "true"
 }
-```
+```  
 
+Beispiel: 	/hotel/mitarbeiter/?mitarbeiter_id=7
+Response-Type: 	application/json
 
-## API Endpoint 3
+Response:
 
-URI: /restaurant/mitarbeiter/
-
-Beispiel: /restaurant/mitarbeiter/?mitarbeiter_id=1
-
-Parameter: mitarbeiter_id (int)
-
-Response-Type: application/json
-
-Response
-
-```
+```  
 {
-    "vorname": "Robüyn",
+    "mitarbeiter_id": "7",
     
-    "nachname": "Pfeil"
+    "Vorname": "Robüyn",
     
-    "Tätigkeit": "Kellner"
+    "Nachnaame": "Pfeil",
     
-    "Erfahrung": "50 Berufsjahre" 
+    "Tätigkeit": "Koch" ,
+
+    "Berufserfahrung": "12 Jahre"   
 }
 ```    
