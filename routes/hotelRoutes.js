@@ -1,8 +1,8 @@
 import express from "express";
 import {
   getHotels,
-  getHotelsById,
   getHotelsByName,
+  getHotelsByCity,
   addHotel,
   newHotelValidators,
 } from "../controllers/hotelControllers.js";
@@ -10,8 +10,8 @@ import {
 const router = express.Router();
 
 router.get("/", getHotels);
-router.get("/:id", getHotelsById);
 router.get("/search", getHotelsByName);
+router.get("/search", getHotelsByCity);
 router.post("/", newHotelValidators, addHotel);
 
 export default router;

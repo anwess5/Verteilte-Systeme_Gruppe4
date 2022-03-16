@@ -1,41 +1,29 @@
 # Verteilte-Systeme_Gruppe4
 
 Ilgner, Yessica
-
 Wowerath, Steven
-
 Weßbecher, Aaron
 
 ## Beschreibung
 
-Die API soll eine Schnittstelle für lokale angesehene Hotels geutzt werden. Dabei werden alle Informationen darüber gespeichert. 
-Zum einen dieInformatioenen zum Hotel allgemein, den Zimmern und den Mitarbeitern. Mit Hilfe der ganzen Inhalte können Mneschen die Hotels vergleichen
+Die API soll eine Schnittstelle für lokale Hotels geutzt werden. Dabei werden alle Informationen darüber gespeichert. 
+Es soll möglich sein sich alle Hotels in einer bestimmten Stadt sich anzuschauen. Ein Hotel nach expliziten Namen zu suchen oder für Jobauschreibungen sich zu jedem Berufszweig im Hotelgewerbe die Mitarbeiter auszugeben.
+Mit Hilfe der ganzen Inhalte können Menschen somit die Hotels vergleichen.
 
 
-## API Endpoint 1
+## API Collection 1
+Diese Collection soll alle Informationen zu einem bestimmten Hotel ausgeben. Dabei kann nach dem Namen oder der Stadt gesucht werden.
+HTTP-Verb GET wird in dem Beispiel verwendet um die Daten vom Server zu den angegebenen Suchkriterien auszugeben 
+            GET /hotels/
+            GET /hotels/{id}
+            GET /hotels/search?name={name}  -> /hotel/?hotel_name="Royal Hotel"
+            GET /hotels/search?city={city}  -> /hotel/?city="Karlsruhe"
+HTTP-Verb POST soll genutzt werden wenn ein neues Hotel eröffnet benutzt werden
+HTTP-Verb PUT wird benötigt wenn ein Hotel entweder eine neue Sternekategorie bekommt, verwendet werden
+HTTP-Verb DELETE wird klar verwendet wenn ein Hotel insolvent geht
+
 URI:
-		/hotel/zimmer
-
-Beispiel: 	/hotel/zimmer/?zimmer_id=12
-Response-Type: 	application/json
-
-Response:
-
-```  
-{
-    "zimmer_id": "12",
-    
-    "Zimmertyp": "Doppelzimmer",
-    
-    "Zimmergröße": "20 qm",
-    
-    "Preis/Nacht": "85,00" ,
-
-    "Balkon":  "true" 
-}
-```  
-
-Beispiel: 	/hotel/location/?hotel_id=3900
+		/hotel	
 Response-Type: 	application/json
 
 Response:
@@ -44,17 +32,62 @@ Response:
 {
     "hotel_id": "3900",
     
-    "Name": "Royal Hotel",
+    "name": "Royal Hotel",
     
-    "Stadt": "Karlsruhe",
+    "city": "Karlsruhe",
+
+    "stars" : "5"
     
-    "Anzahl-Zimmer": "45" ,
+    "rooms": "45" ,
     
-    "Restaurant":  "true"
+    "restaurant":  "true"
+}
+``` 
+
+## API Collection 2
+Diese Collection soll alle Informationen zu einem bestimmten Zimmer in einem Hotel angegeben ausgeben. Dabei kann nach dem Zimmertyp oder der Verfübgarkeit eines speziellen Hotels gesucht werden.
+HTTP-Verb GET wird in dem Beispiel verwendet um die Daten vom Server zu den angegebenen Suchkriterien auszugeben
+            GET /hotels/rooms
+            GET /hotels/rooms/{id}                   
+            GET /hotels/rooms/search?type={type}            -> /hotels/rooms/search?type={"Doppelzimmer"}
+            GET /hotels/search?availability={availability}  -> /hotels/rooms/search?availability={"frei"}
+HTTP-Verb PUT wird benötigt wenn ein Zimmer entweder ein neuen Preis hat, oder sich die Verfügbarkeit geändert hat 
+
+URI:
+		/hotel/rooms
+Response-Type: 	application/json
+
+Response:
+
+```  
+{
+    "room_id": "12",
+
+    "hotel_id": "3900",
+    
+    "type": "Doppelzimmer",
+    
+    "size": "20 qm",
+    
+    "price": "85,00" ,
+
+    "availability" : "frei" ,
+
+    "balcony":  "true" 
 }
 ```  
 
-Beispiel: 	/hotel/mitarbeiter/?mitarbeiter_id=7
+## API Collection 2
+Diese Collection soll alle Informationen zu einem bestimmten Mitarbeiter in einem bestimmten Hotel ausgeben. Dabei kann nach dem Nachnamen oder dem Beruf gesucht werden.
+HTTP-Verb GET wird in dem Beispiel verwendet um die Daten vom Server zu den angegebenen Suchkriterien auszugeben 
+            GET /hotels/employees
+            GET /hotels/employees/{id}                   
+            GET /hotels/employees/search?lastname={lastname}            -> /hotels/employees/search?lastname={"Maier"}
+            GET /hotels/search?job={job}                                -> /hotels/employees/search?job={"Koch"}
+HTTP-Verb POST soll genutzt werden wenn ein neuer Mitarbeiter eingestellt wird 
+HTTP-Verb DELETE wird klar verwendet wenn ein Mitarbeiter gekündigt wird
+URI:
+		/hotel/employees
 Response-Type: 	application/json
 
 Response:
@@ -62,17 +95,15 @@ Response:
 ```  
 {
     "mitarbeiter_id": "7",
-    
-    "Vorname": "Robüyn",
-    
-    "Nachnaame": "Pfeil",
-    
-    "Tätigkeit": "Koch" ,
 
-    "Berufserfahrung": "12 Jahre"   
+    "hotel_id": "3900",
+    
+    "first name": "Anna",
+    
+    "last name": "Maier",
+    
+    "job": "Koch" ,
+
+    "work experience": "12 Jahre"   
 }
 ```    
-
-GET /books
-GET /books/id
-POST /books
