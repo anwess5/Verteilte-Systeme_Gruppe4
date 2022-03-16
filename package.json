@@ -1,0 +1,25 @@
+{
+  "name": "verteilte-systeme_gruppe4",
+  "version": "1.0.0",
+  "description": "Ilgner, Yessica",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YessicaIlgner/Verteilte-Systeme_Gruppe4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YessicaIlgner/Verteilte-Systeme_Gruppe4/issues"
+  },
+  "homepage": "https://github.com/YessicaIlgner/Verteilte-Systeme_Gruppe4#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-validator": "^6.14.0",
+    "nodemon": "^2.0.15"
+  }
+}

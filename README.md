@@ -72,3 +72,7 @@ Response:
     "Berufserfahrung": "12 Jahre"   
 }
 ```    
+
+GET /books
+GET /books/id
+POST /books
