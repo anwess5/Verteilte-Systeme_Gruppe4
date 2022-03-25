@@ -3,7 +3,8 @@ import {
     getRooms,
     getRoomByHotel ,
     getHotelsByAvailability,
-    newRoomlValidators,
+    addRoom,
+    newRoomValidators,
 } from "./controllers/roomControllers.js.js.js";
 
 const router = express.Router();
@@ -15,6 +16,8 @@ router.get("/", getRooms);
 router.get("/search", getRoomByHotel);
 router.get("/search", getHotelsByAvailability);
 router.post("/", newRoomValidators, addRoom);
+//put/Patch fehlt
+//Delete Fehlt
 
 export default router;
 

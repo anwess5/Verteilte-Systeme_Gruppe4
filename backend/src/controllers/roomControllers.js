@@ -1,12 +1,12 @@
 import { check, validationResult } from "express-validator";
 import { Room } from "../models/room.js";
 //_________________________Room_________________________
-//soll alle Raume ausgeben
+//soll alle Räume ausgeben
 export const getRooms = async (req, res) => {
     const rooms = await Room.find();
     res.status(200).send(hotels);
   };
-  //soll alle Raäume eines Hotels ausgeben 
+  //soll alle Räume eines Hotels ausgeben 
   export const getRoomByHotel = async (req, res) => {
     let room = await Room.find({ hotel_id: req.query.hotel_id });
     res.status(200).send(room);
@@ -19,6 +19,10 @@ export const getRooms = async (req, res) => {
   
   //Raum ändern wenn Raum einen anderen Preis bekommt
   //Raum ändern wenn sich die Verfügbarkeit ändert
+
+  //Raum hinzufügen
+  //Raum ändern
+  //Raum löschen
   
   
   // diese Inhalte werden für eine erfolgreiche Erstellung eines Raumes benötigt

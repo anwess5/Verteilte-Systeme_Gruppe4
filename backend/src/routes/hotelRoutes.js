@@ -16,5 +16,7 @@ router.get("/", getHotels);
 router.get("/search", getHotelsByName);
 router.get("/search", getHotelsByCity);
 router.post("/", newHotelValidators, addHotel);
+//put/Patch fehlt
+//Delete Fehl
 
 export default router;

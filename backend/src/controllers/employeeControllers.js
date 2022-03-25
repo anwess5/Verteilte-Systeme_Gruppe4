@@ -2,7 +2,7 @@ import { check, validationResult } from "express-validator";
 import { Employee } from "../models/employees.js";
 
 
-//_____________________Employee
+//_____________________Employee___________________________________
 //soll alle Mitarbeiter ausgeben
 export const getEmployees = async (req, res) => {
   const employee = await Employee.find();
@@ -36,10 +36,10 @@ export const addEmployee = async (req, res) => {
   employee.save(employee).then((todo) => res.status(201).send(todo));
 };
 
-
+//mitarbeiter bearbeiten
 //Mitarbeiter löschen
 
-// diese Inhalte werden für eine erfolgreiche Erstellung eines Hotels benötigt
+// diese Inhalte werden für eine erfolgreiche Erstellung eines Mitarbeiters benötigt
 export const newEmployeeValidators = [
   check("hotel_id").notEmpty().withMessage("Hotel_Id field required"),
   check("first_Name").notEmpty().withMessage("First Name field required"),

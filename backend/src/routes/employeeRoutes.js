@@ -3,6 +3,8 @@ import {
     getEmployees, 
     getEmployeebyJob ,
     getEmployeeByLastname ,
+    addEmployee,
+    newEmployeeValidators,
 } from "./controllers/roomControllers.js.js.js";
 
 const router = express.Router();
@@ -14,6 +16,8 @@ router.get("/", getEmployees);
 router.get("/search", getEmployeebyJob);
 router.get("/search", getEmployeeByLastname);
 router.post("/", newEmployeeValidators, addEmployee);
+//put/Patch fehlt
+//Delete Fehl
 
 export default router;
 
