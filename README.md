@@ -15,7 +15,6 @@ Diese Collection soll alle Informationen zu einem bestimmten Hotel ausgeben. Dab
 HTTP-Verb GET wird in dem Beispiel verwendet um die Daten vom Server zu den angegebenen Suchkriterien auszugeben 
 ``` 
             GET /hotels/
-            GET /hotels/{id}
             GET /hotels/search?name={name}  -> /hotel/?hotel_name="Royal Hotel"
             GET /hotels/search?city={city}  -> /hotel/?city="Karlsruhe"
 HTTP-Verb POST soll genutzt werden wenn ein neues Hotel eröffnet 
