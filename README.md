@@ -6,24 +6,26 @@ Weßbecher, Aaron
 
 ## Beschreibung
 
-Die API soll eine Schnittstelle für lokale Hotels geutzt werden. Dabei werden alle Informationen darüber gespeichert. 
-Es soll möglich sein sich alle Hotels in einer bestimmten Stadt sich anzuschauen. Ein Hotel nach expliziten Namen zu suchen oder für Jobauschreibungen sich zu jedem Berufszweig im Hotelgewerbe die Mitarbeiter auszugeben.
-Mit Hilfe der ganzen Inhalte können Menschen somit die Hotels vergleichen.
+Die API soll als eine Schnittstelle für lokale Hotels genutzt werden. Dabei werden alle relevanten Informationen über ein Hotel gespeichert. 
+Es soll möglich sein sich alle Hotels in einer bestimmten Stadt anzeigen zu lassen. 
 
 
 ## API Collection 1
 Diese Collection soll alle Informationen zu einem bestimmten Hotel ausgeben. Dabei kann nach dem Namen oder der Stadt gesucht werden.
 HTTP-Verb GET wird in dem Beispiel verwendet um die Daten vom Server zu den angegebenen Suchkriterien auszugeben 
+``` 
             GET /hotels/
             GET /hotels/{id}
             GET /hotels/search?name={name}  -> /hotel/?hotel_name="Royal Hotel"
             GET /hotels/search?city={city}  -> /hotel/?city="Karlsruhe"
-HTTP-Verb POST soll genutzt werden wenn ein neues Hotel eröffnet benutzt werden
-HTTP-Verb PUT wird benötigt wenn ein Hotel entweder eine neue Sternekategorie bekommt, verwendet werden
+HTTP-Verb POST soll genutzt werden wenn ein neues Hotel eröffnet 
+HTTP-Verb PUT wird benötigt wenn ein Hotel entweder eine neue Sternekategorie bekommt
 HTTP-Verb DELETE wird klar verwendet wenn ein Hotel insolvent geht
+``` 
 
 URI:
 		/hotel	
+
 Response-Type: 	application/json
 
 Response:
@@ -47,11 +49,15 @@ Response:
 ## API Collection 2
 Diese Collection soll alle Informationen zu einem bestimmten Zimmer in einem Hotel angegeben ausgeben. Dabei kann nach dem Zimmertyp oder der Verfübgarkeit eines speziellen Hotels gesucht werden.
 HTTP-Verb GET wird in dem Beispiel verwendet um die Daten vom Server zu den angegebenen Suchkriterien auszugeben
+``` 
             GET /hotels/rooms
             GET /hotels/rooms/{id}                   
             GET /hotels/rooms/search?type={type}            -> /hotels/rooms/search?type={"Doppelzimmer"}
             GET /hotels/search?availability={availability}  -> /hotels/rooms/search?availability={"frei"}
+HTTP-Verb POST soll genutzt werden wenn ein neues Zimmer in einem Hotel angebaut wird 
 HTTP-Verb PUT wird benötigt wenn ein Zimmer entweder ein neuen Preis hat, oder sich die Verfügbarkeit geändert hat 
+HTTP-Verb DELETE wird klar verwendet wenn ein Zimmer umgebaut wird
+``` 
 
 URI:
 		/hotel/rooms
@@ -85,6 +91,7 @@ HTTP-Verb GET wird in dem Beispiel verwendet um die Daten vom Server zu den ange
             GET /hotels/employees/search?lastname={lastname}            -> /hotels/employees/search?lastname={"Maier"}
             GET /hotels/search?job={job}                                -> /hotels/employees/search?job={"Koch"}
 HTTP-Verb POST soll genutzt werden wenn ein neuer Mitarbeiter eingestellt wird 
+HTTP-Verb PUT wird benötigt wenn ein Mitarbeiter einen neuen Namen oder einen neuen Berufe vtl. bekommt
 HTTP-Verb DELETE wird klar verwendet wenn ein Mitarbeiter gekündigt wird
 URI:
 		/hotel/employees
