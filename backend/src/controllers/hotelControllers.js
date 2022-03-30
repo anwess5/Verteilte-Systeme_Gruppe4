@@ -33,12 +33,21 @@ export const addHotel = async (req, res) => {
     rooms: req.body.rooms,
     restaurant: req.body.restaurant,
   });
+ 
+hotel.save(hotel).then((todo) => res.status(201).send(todo));
+}
 
-  hotel.save(hotel).then((todo) => res.status(201).send(todo));
+// Hotel bekommt neue Sternekategorie 
+export const replaceStars = async (req, res) => {
+  const stars = await Hotel.replaceOne({name: req.query.name}, {stars: req.query.stars});
+  res.status(200).send(hotel);
+};
+// Hotel geht insolvent
+export const deleteHotel = async (req, res) => {
+  const hotel = await Hotel.remove({name: req.query.name})
+  res.status(200).send(hotel);
 };
 
-//Hotel ändern
-//Hotel löschen
 
 // diese Inhalte werden für eine erfolgreiche Erstellung eines Hotels benötigt
 export const newHotelValidators = [
@@ -46,7 +55,6 @@ export const newHotelValidators = [
   check("city").notEmpty().withMessage("City field required"),
   check("stars").notEmpty().withMessage("Stars field required"),
 ];
-
 
 
 
