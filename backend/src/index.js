@@ -1,8 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
 import hotelRoutes from "./routes/hotelRoutes.js";
-import roomRoutes from "./routes/roomRoutes.js";
-import employeeRoutes from "./routes/employeeRoutes.js";
 import mongoose from "mongoose";
 
 // komplette Applikation wird hier initalisiert
