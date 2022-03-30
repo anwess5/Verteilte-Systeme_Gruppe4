@@ -35,9 +35,16 @@ export const addEmployee = async (req, res) => {
 
   employee.save(employee).then((todo) => res.status(201).send(todo));
 };
-
-//mitarbeiter bearbeiten
-//Mitarbeiter löschen
+// Mitarbeiter bearbeiten 
+export const editEmployee = async (req, res) => {
+  const last_Name = await Employee.replaceOne({id: req.query.id}, {job: req.query.job});
+  res.status(200).send(Employee);
+};
+// Mitarbeiter gekündigt 
+export const deleteEmployee = async (req, res) => {
+  const employee = await Employee.remove({id: req.query.id});
+  res.status(200).send(Employee);
+};
 
 // diese Inhalte werden für eine erfolgreiche Erstellung eines Mitarbeiters benötigt
 export const newEmployeeValidators = [
@@ -46,4 +53,6 @@ export const newEmployeeValidators = [
   check("last_Name").notEmpty().withMessage("Last Name field required"),
   check("job").notEmpty().withMessage("Job field required"),
 ];
+
+
 
