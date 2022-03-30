@@ -119,8 +119,11 @@ Response:
 ❏ Beschreibt ein konkretes Anwendungsszenario für den entwickelten
 Service und schildert (in wenigen Worten) eine mögliche
 Gesamt-Architektur in welcher sich dieser befinden könnte.
-``` 
-``` 
+
+Der Benutzer kann mit unserem entwickelten Service nach Hotels in einer ausgewählten Stadt suchen, sich über die Zimmer und über die Mitarbeiter des Hotels genauer infomieren. Diesen Service nutz unser neugieriger Benutzer, weil er an alle Informationen gelangen möchte, die für ihn wichtig sind um eine fundierte Entscheidung zu treffen für seinen nächsten Aufenthalt.
+
+
+
 ❏ Welche Probleme können entstehen, wenn der entwickelte Service von
 mehreren Parteien verwendet wird? Beschreibt zwei Probleme sowie
 mögliche Lösungen.
