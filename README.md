@@ -122,6 +122,15 @@ Gesamt-Architektur in welcher sich dieser befinden könnte.
 
 Der Benutzer kann mit unserem entwickelten Service nach Hotels in einer ausgewählten Stadt suchen, sich über die Zimmer und über die Mitarbeiter des Hotels genauer infomieren. Diesen Service nutz unser neugieriger Benutzer, weil er an alle Informationen gelangen möchte, die für ihn wichtig sind um eine fundierte Entscheidung zu treffen für seinen nächsten Aufenthalt.
 
+Die Gesamt-Architektur setzt sich wie folgt zusammen:
+
+1. Der Benutzer stellt am Computer eine Suchanfrage über ein Hotel, Zimmer oder einen Mitarbeiter (Request). 
+1.1 Der Benutzer stellt die Anfrage mit GET.
+1.2 Der Administrator kann über POST,PUT und DELETE Datensätze hinzufügen, verändern und löschen.
+2. Die REST-API befindet sich zwischen dem Client und dem Server. Die API stellt sicher, dass der Benutzer mit dem System so kommunizieren kann, dass es die Anforderung versteht und erfüllen kann. 
+Man kann sich die API als Vermittler zwischen Nutzern oder Client und den von ihnen benötigten Ressourcen oder Webservices vorstellen.
+3. Aufgrund der Anfrage schickt ein Server die relevanten Daten über die API wieder an den Client zurück.(Response)
+
 
 
 ❏ Welche Probleme können entstehen, wenn der entwickelte Service von
