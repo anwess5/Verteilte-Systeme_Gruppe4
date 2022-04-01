@@ -7,7 +7,7 @@ import {
   newHotelValidators,
   replaceStars,
   deleteHotel,
-} from "./controllers/hotelControllers.js";
+} from "../controllers/hotelControllers.js";
 import {
   getRooms,
   getRoomsByName,
@@ -15,7 +15,7 @@ import {
   addRoom,
   changeRoom,
   deleteRoom,
-} from "./controllers/roomControllers.js";
+} from "../controllers/roomControllers.js";
 import {
   getEmployees,
   getEmployeebyJob,
@@ -23,7 +23,7 @@ import {
   addEmployee,
   editEmployee,
   deleteEmployee,
-} from "./controllers/employeeControllers.js";
+} from "../controllers/employeeControllers.js";
 const router = express.Router();
 //-----------------------------------------------------------Hotel-------------------------------------------------------------------------
 //get-Methoden für das anzeigen von allen Hotels,

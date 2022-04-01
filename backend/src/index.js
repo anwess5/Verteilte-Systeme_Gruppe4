@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 // komplette Applikation wird hier initalisiert
 // der Port auf der sie läuft ist 4000
 const app = express();
-const port = 3000;
+const port = 4000;
 
 app.use(bodyParser.json());
 

@@ -5,17 +5,27 @@ import { Hotel } from "../models/hotel.js";
 //_______________________Hotel______________________________________
 //soll alle Hotels ausgeben
 export const getHotels = async (req, res) => {
+  res.set("Access-Control-Allow-Origin", "http://localhost:3000");
   const hotels = await Hotel.find();
+  if (hotels == undefined){
+    return res.status(400).send({error: 'No Hotels found'});
+  }
   res.status(200).send(hotels);
 };
 //soll alle Hotels ausgeben mit einem gesuchten Name
 export const getHotelsByName = async (req, res) => {
   let hotel = await Hotel.find({ name: req.query.name });
+  if (hotel == undefined){
+    return res.status(400).send({error: "Hotel $(req.query.name) doesn´t exist"});
+  }
   res.status(200).send(hotel);
 };
 //soll alle Hotels ausgegeben in einer angegebenen Stadt
 export const getHotelsByCity = async (req, res) => {
   let hotel = await Hotel.find({ name: req.query.city });
+  if (hotel == undefined){
+    return res.status(400).send({error: "Hotel  in $(req.query.city) doesn´t exist"});
+  }
   res.status(200).send(hotel);
 };
 

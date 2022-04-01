@@ -5,17 +5,26 @@ import { Employee } from "../models/employees.js";
 //_____________________Employee___________________________________
 //soll alle Mitarbeiter ausgeben
 export const getEmployees = async (req, res) => {
-  const employee = await Employee.find();
+  const employees = await Employee.find();
+  if (employees == undefined){
+    return res.status(400).send({error: 'No Employees found'});
+  }
   res.status(200).send(employee);
 };
 //soll alle Mitarbeiter mit bestimmten Beruf ausgeben
 export const getEmployeebyJob = async (req, res) => {
   let employee = await Employee.find({ job: req.query.job });
+  if (employee == undefined){
+    return res.status(400).send({error: "Employees with  $(req.query.job) doesn´t exist"});
+  }
   res.status(200).send(employee);
 };
 //soll alle Mitarbeietr mit bestimmten Nachnamen ausgeben
 export const getEmployeeByLastname = async (req, res) => {
   let employee = await Employee.find({ last_Name: req.query.last_Name });
+  if (employee == undefined){
+    return res.status(400).send({error: "Employees  $(req.query.lastname) doesn´t exist"});
+  }
   res.status(200).send(employee);
 };
 

@@ -4,21 +4,27 @@ import { Room } from "../models/room.js";
 //soll alle Räume ausgeben
 export const getRooms = async (req, res) => {
     const rooms = await Room.find();
+    if (rooms == undefined){
+      return res.status(400).send({error: "Rooms not found"});
+    }
     res.status(200).send(hotels);
   };
   //soll alle Räume eines Hotels ausgeben 
-  export const getRoomByHotel = async (req, res) => {
+  export const getRoomsByName = async (req, res) => {
     let room = await Room.find({ hotel_id: req.query.hotel_id });
+    if (room == undefined){
+      return res.status(400).send({error: "Room in Hotel$(req.query.hotel_id) doesn´t exist"});
+    }
     res.status(200).send(room);
   };
   //soll alle Räume ausgegeben mit einer bestimmten verfügbarkeit
   export const getRoomsByAvailability = async (req, res) => {
     let room = await Hotel.find({ availability: req.query.availability });
+    if (rooom == undefined){
+      return res.status(400).send({error: "There no Rooms with  $(req.query.availability)"});
+    }
     res.status(200).send(hotel);
   };
-  
-  //Raum ändern wenn Raum einen anderen Preis bekommt
-  //Raum ändern wenn sich die Verfügbarkeit ändert
 
   //Raum hinzufügen
   export const addRoom = async (req, res) => {
