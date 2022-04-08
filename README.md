@@ -132,12 +132,26 @@ Man kann sich die API als Vermittler zwischen Nutzern oder Client und den von ih
 3. Aufgrund der Anfrage schickt ein Server die relevanten Daten über die API wieder an den Client zurück.(Response)
 
 
-
 ❏ Welche Probleme können entstehen, wenn der entwickelte Service von
 mehreren Parteien verwendet wird? Beschreibt zwei Probleme sowie
 mögliche Lösungen.
-``` 
-```
+
+1. Daten werden überschrieben
+
+Sollten zwei oder mehrer Beutzer geleichzeitig auf das Modell zugreifen, besteht die Gefahr, dass die Daten überschrieben werden. Es muss verhindert werden, dass zwei oder mehrere Benutzer die Chance haben gleichzeitig die gleichen Daten zu bearbeiten. 
+
+
+Lösung: Um dies zu verhindern kann eine Software eingesetzt werden. Diese Software regelt den Zugriff auf die Daten, sodass keine zwei Benutzer oder mehrere gleichzeitig die gleichen Daten bearbeiten können. 
+
+
+2. Replikation und Konsitenz.
+
+Die Replikas müssen konsistenz gehalten werden. Nach einer Anfrage sollte der Service auf jede belibige Replika zugreifen können und im besten Fall immer die gleichen Daten erhalten. Der Benutzer sollte so die richtigen Daten bekommt. Sind die Replikas nicht konsistent gehalten, kann es sein, dass der Service verschiedene Daten bei gleichen Anfragen liefert.  
+
+Lösung: 
+
+
+
 ❏ Was ist abseits der reinen Programmierung für die Produktivsetzung des
 entwickelten Services zu beachten? Nenne mindestens zwei Aspekte und
 führe diese in ein paar Sätzen aus.
