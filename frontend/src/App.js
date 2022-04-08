@@ -11,12 +11,9 @@ class App extends React.Component {
     this.fetchDisplayData = this.fetchDisplayData.bind(this);
   }
 
-  // requests and waits for data by calling RestClient's
-  // fetchAllBooks. as soon as the data is there it is set
-  // as a state
   async fetchDisplayData() {
     let data = await fetchAllHotels();
-    this.setState({ books: data });
+    this.setState({ hotels: data });
   }
 
   // this is displayed on the screen
@@ -29,7 +26,7 @@ class App extends React.Component {
         </button>
         <div className="data">
           {/* generates a div for every entry */}
-          {this.state.books.map((book, key) => (
+          {this.state.hotels.map((hotel, key) => (
             <div key={key}>
               {hotel.name} in {hotel.city} with {hotel.stars} ⭐ and {hotel.room} rooms
             </div>
