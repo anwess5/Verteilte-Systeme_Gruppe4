@@ -136,6 +136,7 @@ Man kann sich die API als Vermittler zwischen Nutzern oder Client und den von ih
 mehreren Parteien verwendet wird? Beschreibt zwei Probleme sowie
 mögliche Lösungen.
 
+
 1. Daten werden überschrieben
 
 Sollten zwei oder mehrer Beutzer geleichzeitig auf das Modell zugreifen, besteht die Gefahr, dass die Daten überschrieben werden. Es muss verhindert werden, dass zwei oder mehrere Benutzer die Chance haben gleichzeitig die gleichen Daten zu bearbeiten. 
@@ -144,11 +145,11 @@ Sollten zwei oder mehrer Beutzer geleichzeitig auf das Modell zugreifen, besteht
 Lösung: Um dies zu verhindern kann eine Software eingesetzt werden. Diese Software regelt den Zugriff auf die Daten, sodass keine zwei Benutzer oder mehrere gleichzeitig die gleichen Daten bearbeiten können. 
 
 
-2. Replikation und Konsitenz.
+2. Replikation und Konsitenz
 
 Die Replikas müssen konsistenz gehalten werden. Nach einer Anfrage sollte der Service auf jede belibige Replika zugreifen können und im besten Fall immer die gleichen Daten erhalten. Der Benutzer sollte so die richtigen Daten bekommt. Sind die Replikas nicht konsistent gehalten, kann es sein, dass der Service verschiedene Daten bei gleichen Anfragen liefert.  
 
-Lösung: 
+Lösung: Ein Verfahren muss inplemtiert werden , was eine strikte Konsitenzhaltung ermöglicht dies würde jedoch dazu führren, dass die Leistung des Gesamtsystems negativ beinflusst wird. Deshalb ist die Lösung, dass man auf strikte Konsitenz verzichtet.  
 
 
 
