@@ -1,8 +1,8 @@
 # Verteilte-Systeme_Gruppe4
 
-Ilgner, Yessica
-Wowerath, Steven
-Weßbecher, Aaron
+Ilgner, Yessica (8043789)
+Wowerath, Steven (4941083)
+Weßbecher, Aaron (4050011)
 
 ## Beschreibung
 
@@ -46,16 +46,16 @@ Die Replikas müssen konsistenz gehalten werden. Nach einer Anfrage sollte der S
 
 Lösung: Ein Verfahren muss implementiert werden , was eine strikte Konsitenzhaltung ermöglicht dies würde jedoch dazu führen, dass die Leistung des Gesamtsystems negativ beinflusst wird. Deshalb ist die Lösung, dass man auf strikte Konsitenz verzichtet.  
 
-``` 
 
 ❏ Was ist abseits der reinen Programmierung für die Produktivsetzung des
 entwickelten Services zu beachten? Nenne mindestens zwei Aspekte und
 führe diese in ein paar Sätzen aus.
-```
 
-``` 
+1. Infrastruktur muss vorhanden und ausreichend sein 
+Es muss beispielsweise genügend Verarbeitungs-, Netzwerk- und Speicherkapazität für das neue System vorhanden sein. Außerdem muss das Betriebspersonal und das Servicepersonal geschult sein, sodass diese ab dem GoLive den Mitarbeitenden zur Verfügung stehen und helfen können.  
 
-
+2. Datenaustausch muss von beginn an möglich sein
+Der Datenfluss ziwschen unserem System und anderen Systemen darf nicht unterbrochen werden. Dazu müssen alle relevnten Schnittstellen erfasst und getestet werden. Außerdem müssen ausgewählte und passende Tools eingesetzt werden, um den Datenverkehr zu überwachen. Für mögliche Risiken und Probleme müssen Notfallpläne ausgearbeitet werden und gegebenenfalls die möglichen Folgen für unser System und das System des Partners erfasst werden.    
 
 ## API Collection 1
 ``` 
